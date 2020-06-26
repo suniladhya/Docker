@@ -74,8 +74,32 @@ Docker run
 
 2. Creates an insatance of the image and executes it
 
+**The VM is a hardware abstraction**: it takes physical CPUs and RAM from a host, and divides and shares it across several smaller virtual machines. There is an OS and application running inside the VM, but the virtualization software usually has no real knowledge of that.
+
+**A container is an application abstraction**: the focus is really on the OS and the application, and not so much the hardware abstraction. Many customers actually use both VMs and containers today in their environments and, in fact, may run containers inside of VMs.
+
+*Imagine booting up a virtual machine (VM), running a command and then killing it; it would take a minute or two just to boot the VM before running the command. A VM has to emulate a full hardware stack, boot an operating system, and then launch your app - it’s a virtualized hardware environment. Docker containers function at the application layer so they skip most of the steps VMs require and just run what is required for the app. Now you know why they say containers are fast!*
+
+![DockerRun](https://training.play-with-docker.com/images/ops-basics-run-details.svg)
+![DockerRunInstances](https://training.play-with-docker.com/images/ops-basics-instances.svg)
+![DockerContainerInIsolation](https://training.play-with-docker.com/images/ops-basics-exec.svg)
+
 Docker build
 
 Creates a docker image using docker file
 
 docker ps: lists the running containers [-a] => all
+
+**Images**: The file system and configuration of our application which are used to create containers. To find out more about a Docker image, run docker image inspect alpine. In the demo above, you used the docker image pull command to download the alpine image. When you executed the command docker container run hello-world, it also did a docker image pull behind the scenes to download the hello-world image.
+
+
+**Containers**: Running instances of Docker images — containers run the actual applications. A container includes an application and all of its dependencies. It shares the kernel with other containers, and runs as an isolated process in user space on the host OS. You created a container using docker run which you did using the alpine image that you downloaded. A list of running containers can be seen using the docker container ls command.
+
+
+**Docker daemon**: The background service running on the host that manages building, running and distributing Docker containers.
+Docker client - The command line tool that allows the user to interact with the Docker daemon.
+
+
+**Docker Hub**: Store is, among other things, a registry of Docker images. You can think of the registry as a directory of all available Docker images. You’ll be using this later in this tutorial.
+
+[further readings](https://training.play-with-docker.com/ops-s1-images/)
