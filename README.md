@@ -102,4 +102,17 @@ Docker client - The command line tool that allows the user to interact with the 
 
 **Docker Hub**: Store is, among other things, a registry of Docker images. You can think of the registry as a directory of all available Docker images. You’ll be using this later in this tutorial.
 
+```console
+docker container run -ti ubuntu bash
+apt-get update
+apt-get install -y figlet
+figlet "hello docker"
+exit
+docker container ls -a
+docker container commit CONTAINER_ID
+docker image ls
+docker image tag <IMAGE_ID> ourfiglet
+docker image ls
+```
+
 [further readings](https://training.play-with-docker.com/ops-s1-images/)
