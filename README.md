@@ -113,6 +113,21 @@ docker container commit CONTAINER_ID
 docker image ls
 docker image tag <IMAGE_ID> ourfiglet
 docker image ls
+docker container run ourfiglet figlet hello
+```
+![Image Creation: Instance Promotion](https://training.play-with-docker.com/images/ops-images-commit.svg)
+
+### Image creation using a Dockerfile
+
+![DockerFiles](https://training.play-with-docker.com/images/ops-images-dockerfile.svg)
+
+![LayersAndCache](https://training.play-with-docker.com/images/ops-images-cache.svg)
+
+```console
+docker image pull alpine
+docker image inspect alpine
+docker image inspect --format "{{ json .RootFS.Layers }}" alpine
+docker image inspect --format "{{ json .RootFS.Layers }}" <image ID>
 ```
 
 [further readings](https://training.play-with-docker.com/ops-s1-images/)
