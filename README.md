@@ -1,4 +1,19 @@
 # Docker
+### Tim Correy Notes
+What is Docker?
+
+docker images
+docker build -t hello-docker:1.0.0 .
+docker images
+docker image  history 499
+docker run --name first-container -p 8080:80 hello-docker:1.0.0
+docker ps -a
+docker stop 322
+docker start 322
+docker stop 322
+docker rm 322
+docker build -t hello-docker:1.0.1 .
+
 
 ## Components
 
