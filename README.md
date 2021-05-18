@@ -2,6 +2,7 @@
 ### Tim Correy Notes
 What is Docker?
 
+```console
 docker images
 docker build -t hello-docker:1.0.0 .
 docker images
@@ -13,6 +14,7 @@ docker start 322
 docker stop 322
 docker rm 322
 docker build -t hello-docker:1.0.1 .
+```
 
 
 ## Components
